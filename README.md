@@ -90,7 +90,7 @@ PoultryDistributionSystem.sln
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/poultry-distribution-system.git
+git clone [https://github.com/Elayaraja1609/poultry-distribution-system.git]
 cd poultry-distribution-system
 ```
 
