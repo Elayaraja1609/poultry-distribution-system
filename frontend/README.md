@@ -1,60 +1,186 @@
-# PoultryDistro – Unified Portal
+# Poultry Distribution System – Frontend
 
-Single React app for **all roles**. One app, one URL, one `npm start`.  
-Menu options and features are shown based on the logged-in user's role.
+React frontend for the **Poultry Distribution Management System**. A single application for all user roles: one app, one URL. Menu and features change based on the logged-in user's role.
 
-- **Admin** – Full access: Dashboard, Inventory, Orders, Logistics, Deliveries, Sales, Reports, Suppliers, Farms, Chickens, Vehicles, Financials, Stock Movements, Notifications.
-- **ShopOwner** – Customer portal: Dashboard, Orders, Deliveries, Sales, Payments, Profile, Notifications.
-- **Driver** – Dashboard, Logistics (Distributions), Deliveries, Notifications.
-- **FarmManager** – Dashboard, Suppliers, Farms, Chickens, Inventory, Stock Movements, Profile, Notifications.
-
-Run only this app; no need to run a separate customer app.
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.9-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 
 ---
 
-# Getting Started with Create React App
+## Table of Contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Configuration](#configuration)
+- [Project Structure](#project-structure)
+- [Role-Based Features](#role-based-features)
+- [Available Scripts](#available-scripts)
+- [Backend Dependency](#backend-dependency)
+
+---
+
+## Overview
+
+This is the **web client** only. It talks to the .NET 8 backend API for all data. You do not run a separate app per role; the same build serves:
+
+- **Admin** – Full access to dashboard, inventory, orders, logistics, deliveries, sales, reports, suppliers, farms, chickens, vehicles, expenses, stock movements, notifications.
+- **ShopOwner** (Customer) – Dashboard, orders, deliveries, sales, payments, profile, notifications.
+- **Driver** – Dashboard, logistics (distributions), deliveries, profile, notifications.
+- **FarmManager** – Dashboard, suppliers, farms, chickens, inventory, stock movements, profile, notifications.
+
+Authentication is JWT; the app stores the token and sends it with each API request.
+
+---
+
+## Tech Stack
+
+| Category | Technology |
+|----------|------------|
+| **UI** | React 19, TypeScript |
+| **Routing** | React Router v7 |
+| **HTTP** | Axios (centralized in `src/services/api.ts`) |
+| **Charts** | Recharts |
+| **Payments** | Stripe (React Stripe.js) |
+| **State** | React Context (e.g. `AuthContext`) |
+| **Build** | Create React App (react-scripts) |
+
+---
+
+## Prerequisites
+
+- **Node.js** 18+ (LTS recommended)
+- **npm** (comes with Node.js)
+- **Backend API** running and reachable (see [Backend Dependency](#backend-dependency))
+
+---
+
+## Getting Started
+
+### 1. Install dependencies
+
+From the **frontend** folder:
+
+```bash
+cd frontend
+npm install
+```
+
+### 2. Configure the API URL
+
+Set the backend base URL (see [Configuration](#configuration)). Either use a `.env` file or change the fallback in `src/services/api.ts`.
+
+### 3. Run the app
+
+```bash
+npm start
+```
+
+The app opens at **http://localhost:3000**. Log in with credentials that exist in the backend (e.g. after registering or via seed data).
+
+---
+
+## Configuration
+
+### API base URL
+
+The app calls the backend using a base URL. You can set it in two ways:
+
+**Option A – Environment variable (recommended)**
+
+Create a `.env` file in the **frontend** folder:
+
+```env
+REACT_APP_API_URL=https://localhost:5062/api
+```
+
+Replace the URL with your backend base URL (no trailing slash). Restart `npm start` after changing `.env`.
+
+**Option B – Fallback in code**
+
+In `src/services/api.ts`, the fallback is used when `REACT_APP_API_URL` is not set:
+
+```ts
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://your-api-url/api';
+```
+
+Change this fallback if you do not use `.env`.
+
+**Note:** Do not commit real secrets or production URLs to the repo. Add `.env` to `.gitignore` (Create React App ignores `.env.local` by default).
+
+---
+
+## Project Structure
+
+```
+frontend/
+├── public/                 # Static assets, index.html
+├── src/
+│   ├── components/         # Reusable UI (Layout, LoadingSpinner, NotificationBell, etc.)
+│   ├── config/             # navConfig.ts – role-based menu
+│   ├── contexts/           # AuthContext
+│   ├── pages/              # Route pages (Dashboard, Orders, Chickens, etc.)
+│   ├── services/           # API client (api.ts) + per-entity services
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── index.css
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+- **components** – Shared components (e.g. `ProtectedRoute`, `RoleBasedRoute`, `StripePaymentForm`).
+- **config** – `navConfig.ts` defines menu items and which roles can see them.
+- **contexts** – Auth state and helpers.
+- **pages** – One folder per main screen; each typically has a `.tsx` and `.css` file.
+- **services** – `api.ts` is the Axios instance (base URL, auth header, interceptors). Other files are API helpers per domain (e.g. `orderService.ts`, `farmService.ts`).
+
+---
+
+## Role-Based Features
+
+| Feature / Page | Admin | ShopOwner | Driver | FarmManager |
+|----------------|-------|-----------|--------|-------------|
+| Dashboard | ✓ | ✓ | ✓ | ✓ |
+| Notifications | ✓ | ✓ | ✓ | ✓ |
+| Inventory | ✓ | | | ✓ |
+| Orders | ✓ | ✓ | | |
+| Logistics (Distributions) | ✓ | | ✓ | |
+| Deliveries | ✓ | ✓ | ✓ | |
+| Sales | ✓ | ✓ | | |
+| Reports | ✓ | | | |
+| Suppliers | ✓ | | | ✓ |
+| Farms | ✓ | | | ✓ |
+| Chickens | ✓ | | | ✓ |
+| Vehicles | ✓ | | | |
+| Financials (Expenses) | ✓ | | | |
+| Stock Movements | ✓ | | | ✓ |
+| Payments | | ✓ | | |
+| Profile | | ✓ | ✓ | ✓ |
+
+Routes are protected; users only see menu items and pages allowed for their role.
+
+---
 
 ## Available Scripts
 
-In the project directory, you can run:
+Run these from the **frontend** directory.
 
-### `npm start`
+| Command | Description |
+|---------|-------------|
+| `npm start` | Runs the app in development mode at [http://localhost:3000](http://localhost:3000). Hot reload and lint messages in the console. |
+| `npm run build` | Production build into the `build/` folder. Minified and optimized for deployment. |
+| `npm test` | Runs the test runner in watch mode (e.g. Jest + React Testing Library). |
+| `npm run eject` | **One-way:** ejects from Create React App and copies build config into the project. Not required for normal use. |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Backend Dependency
 
-### `npm test`
+This frontend expects the **Poultry Distribution System** .NET 8 API to be running. The repo root contains the full solution (backend + this frontend).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Backend setup and API docs:** see the main [README.md](../README.md) in the repository root.
+- **Swagger:** when the API is running, use `/swagger` on the API base URL for endpoint documentation.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Ensure the frontend’s API base URL (see [Configuration](#configuration)) points to the same backend you use for development or production.
