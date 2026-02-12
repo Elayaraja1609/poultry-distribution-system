@@ -1,0 +1,41 @@
+.stripe-payment-form {
+  padding: 1.5rem;
+}
+
+.payment-amount {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.payment-amount h3 {
+  margin: 0;
+  color: #10B981;
+  font-size: 1.5rem;
+}
+
+.card-element-container {
+  padding: 1rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: white;
+}
+
+.payment-error {
+  color: #991B1B;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: #FEE2E2;
+  border: 1px solid #FECACA;
+  border-radius: 8px;
+}
+
+.payment-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.payment-actions button {
+  min-width: 120px;
+}

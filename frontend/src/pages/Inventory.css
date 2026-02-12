@@ -1,0 +1,470 @@
+.inventory-page {
+  max-width: 100%;
+}
+
+.page-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.page-title-section h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.page-title-section p {
+  font-size: 0.9375rem;
+  color: #6B7280;
+  margin: 0;
+}
+
+/* Summary Cards */
+.summary-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card-large {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.summary-card-large .card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.summary-card-large .card-icon.success {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.summary-card-large .card-icon.warning {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.summary-card-large .card-icon.error {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.summary-card-large .card-content {
+  flex: 1;
+}
+
+.summary-card-large .card-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.summary-card-large .card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.summary-card-large .card-change {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.summary-card-large .card-change.positive {
+  color: #10B981;
+}
+
+.summary-card-large .card-change.negative {
+  color: #EF4444;
+}
+
+/* Real-time Farm Stock Table */
+.farm-stock-table-card {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.farm-stock-table-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.farm-stock-table-card .card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.farm-stock-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.farm-stock-table thead {
+  background-color: #F9FAFB;
+}
+
+.farm-stock-table th {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.farm-stock-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #E5E7EB;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.farm-stock-table tbody tr:hover {
+  background-color: #F9FAFB;
+}
+
+.farm-stock-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Stock Movement History */
+.movement-history-card {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.movement-history-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.movement-history-card .card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.movement-history-card .card-link {
+  color: #10B981;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.movement-history-card .card-link:hover {
+  color: #059669;
+}
+
+.movement-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.movement-table thead {
+  background-color: #F9FAFB;
+}
+
+.movement-table th {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.movement-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #E5E7EB;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.movement-table tbody tr:hover {
+  background-color: #F9FAFB;
+}
+
+.movement-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.action-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.action-type.inbound {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.action-type.outbound {
+  background-color: #DBEAFE;
+  color: #1E40AF;
+}
+
+.action-type.loss {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.action-type.transfer {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.quantity-positive {
+  color: #10B981;
+  font-weight: 600;
+}
+
+.quantity-negative {
+  color: #EF4444;
+  font-weight: 600;
+}
+
+/* Right Column Cards */
+.right-column-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.info-card .card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.info-card .card-description {
+  font-size: 0.875rem;
+  color: #6B7280;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.stock-breakdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stock-breakdown-item {
+  margin-bottom: 1rem;
+}
+
+.stock-breakdown-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.stock-breakdown-bar {
+  height: 8px;
+  background-color: #F3F4F6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.stock-breakdown-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10B981 0%, #059669 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Content Grid */
+.content-grid-two-column {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .content-grid-two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Farm Selector */
+.farm-selector-wrapper {
+  margin-bottom: 2rem;
+}
+
+.farm-selector {
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  font-size: 0.875rem;
+  color: #374151;
+  min-width: 250px;
+  cursor: pointer;
+}
+
+.farm-selector:focus {
+  outline: none;
+  border-color: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Inventory Details */
+.inventory-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .inventory-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stock-meter-card {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stock-meter-card .card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.stock-info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+.stock-bar-large {
+  height: 32px;
+  background-color: #F3F4F6;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.stock-fill-large {
+  height: 100%;
+  background: linear-gradient(90deg, #10B981 0%, #059669 100%);
+  border-radius: 16px;
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.stock-bar-large.warning .stock-fill-large {
+  background: linear-gradient(90deg, #F59E0B 0%, #D97706 100%);
+}
+
+.stock-bar-large.critical .stock-fill-large {
+  background: linear-gradient(90deg, #EF4444 0%, #DC2626 100%);
+}
+
+.stock-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stock-stat-item {
+  text-align: center;
+}
+
+.stock-stat-item .stat-label {
+  font-size: 0.75rem;
+  color: #6B7280;
+  margin-bottom: 0.25rem;
+}
+
+.stock-stat-item .stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.stock-stat-item.in .stat-value {
+  color: #10B981;
+}
+
+.stock-stat-item.out .stat-value {
+  color: #3B82F6;
+}
+
+.stock-stat-item.loss .stat-value {
+  color: #EF4444;
+}
+
+.stock-stat-item.available .stat-value {
+  color: #667EEA;
+}

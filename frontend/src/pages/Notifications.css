@@ -1,0 +1,86 @@
+.notifications-page {
+  padding: 2rem;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filters select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.notification-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid transparent;
+}
+
+.notification-card.unread {
+  border-left-color: #667eea;
+  background-color: #f0f7ff;
+}
+
+.notification-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.notification-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.notification-info {
+  flex: 1;
+}
+
+.notification-info h3 {
+  margin: 0 0 0.25rem 0;
+  color: #333;
+}
+
+.notification-time {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.btn-mark-read {
+  padding: 0.5rem 1rem;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.btn-mark-read:hover {
+  background-color: #5568d3;
+}
+
+.notification-message {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+}

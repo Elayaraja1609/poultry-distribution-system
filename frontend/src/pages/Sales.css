@@ -1,0 +1,88 @@
+.sales-page {
+  max-width: 100%;
+}
+
+.sales-page .page-header {
+  margin-bottom: 2rem;
+}
+
+.sales-page .page-header h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.sales-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #FFFFFF;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.sales-table thead {
+  background-color: #F9FAFB;
+}
+
+.sales-table th {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.sales-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #E5E7EB;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.sales-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.sales-table tbody tr:hover {
+  background-color: #F9FAFB;
+}
+
+.sales-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.sales-page .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.sales-page .pagination button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #E5E7EB;
+  background-color: #FFFFFF;
+  color: #374151;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.sales-page .pagination button:hover:not(:disabled) {
+  background-color: #F9FAFB;
+  border-color: #D1D5DB;
+}
+
+.sales-page .pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

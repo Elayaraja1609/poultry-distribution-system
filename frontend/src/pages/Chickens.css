@@ -1,0 +1,66 @@
+.chickens-page {
+  padding: 2rem;
+}
+
+.chickens-table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chickens-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.chickens-table thead {
+  background-color: #667eea;
+  color: white;
+}
+
+.chickens-table th,
+.chickens-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.chickens-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.status-badge,
+.health-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+}
+
+.health-badge.healthy {
+  background-color: #28a745;
+}
+
+.health-badge.sick {
+  background-color: #dc3545;
+}
+
+.health-badge.recovered {
+  background-color: #17a2b8;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+}

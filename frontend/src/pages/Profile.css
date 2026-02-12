@@ -1,0 +1,48 @@
+.profile-page {
+  max-width: 100%;
+}
+
+.profile-page .page-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.profile-info.card,
+.profile-form.card {
+  background: #FFFFFF;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.info-row {
+  display: flex;
+  padding: 1rem 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row label {
+  font-weight: 600;
+  min-width: 150px;
+  color: #374151;
+}
+
+.info-row span {
+  color: #6B7280;
+}
+
+.profile-form .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}

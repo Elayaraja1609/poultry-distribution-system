@@ -1,0 +1,81 @@
+.payments-page {
+  max-width: 100%;
+}
+
+.payments-page .page-header-section {
+  margin-bottom: 2rem;
+}
+
+.sales-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.sale-card {
+  background: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sale-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.sale-header h3 {
+  margin: 0 0 0.25rem 0;
+  color: #111827;
+}
+
+.sale-date {
+  margin: 0;
+  color: #6B7280;
+  font-size: 0.875rem;
+}
+
+.sale-details {
+  margin-top: 1rem;
+}
+
+.amount-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #F9FAFB;
+  border-radius: 8px;
+}
+
+.amount-row span {
+  color: #374151;
+}
+
+.payment-history {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #F9FAFB;
+  border-radius: 8px;
+}
+
+.payment-history ul {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.5rem;
+  color: #6B7280;
+}
+
+.sale-actions {
+  margin-top: 1rem;
+}
+
+.payments-page .pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
