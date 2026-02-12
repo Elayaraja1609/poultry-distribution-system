@@ -1,0 +1,6 @@
+@PoultryDistributionSystem.API_HostAddress = http://localhost:5062
+
+GET {{PoultryDistributionSystem.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
